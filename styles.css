@@ -827,9 +827,26 @@ body {
 
 .about-main-image {
     width: 100%;
-    height: 350px;
+    height: 480px;
     object-fit: cover;
     display: block;
+}
+
+/* Ensure video fills like the image */
+.about-image-container video.about-main-image {
+    background: #000;
+}
+
+@media (max-width: 1024px) {
+    .about-main-image { height: 400px; }
+}
+
+@media (max-width: 768px) {
+    .about-main-image { height: 320px; }
+}
+
+@media (max-width: 480px) {
+    .about-main-image { height: 240px; }
 }
 
 .about-image-overlay {

@@ -313,3 +313,54 @@ scrollToTopBtn.addEventListener('click', () => {
         behavior: 'smooth'
     });
 });
+
+// Funcionalidad de galería de productos
+function initProductGallery() {
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    const mainImages = document.querySelectorAll('.detail-main-image');
+    
+    if (thumbnails.length === 0 || mainImages.length === 0) return;
+    
+    // Array de imágenes para la galería
+    const galleryImages = [
+        'matrial_piscaheritos/art.png',
+        'matrial_piscaheritos/rayos_de_sol.jpg',
+        'matrial_piscaheritos/dulces_momentos.jpg'
+    ];
+    
+    // Crear todas las imágenes principales
+    const galleryMain = document.querySelector('.gallery-main');
+    if (galleryMain) {
+        galleryMain.innerHTML = '';
+        galleryImages.forEach((src, index) => {
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = `Producto ${index + 1}`;
+            img.className = 'detail-main-image';
+            if (index === 0) img.classList.add('active');
+            galleryMain.appendChild(img);
+        });
+    }
+    
+    // Actualizar thumbnails con las imágenes correctas
+    thumbnails.forEach((thumb, index) => {
+        if (galleryImages[index]) {
+            thumb.src = galleryImages[index];
+        }
+        
+        thumb.addEventListener('click', () => {
+            // Remover clase active de todas las imágenes y thumbnails
+            mainImages.forEach(img => img.classList.remove('active'));
+            thumbnails.forEach(t => t.classList.remove('active'));
+            
+            // Añadir clase active a la imagen y thumbnail seleccionados
+            if (mainImages[index]) {
+                mainImages[index].classList.add('active');
+            }
+            thumb.classList.add('active');
+        });
+    });
+}
+
+// Inicializar galería cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', initProductGallery);

@@ -449,6 +449,189 @@ body {
     text-decoration: underline;
 }
 
+/* Estilos para páginas de productos */
+.product-detail {
+    padding: 120px 0 80px;
+    background: var(--soft-white);
+    min-height: 100vh;
+}
+
+.product-detail-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.product-detail-info h1 {
+    font-size: 2.5rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.product-subtitle {
+    font-size: 1.3rem;
+    color: var(--text-medium);
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.product-variants {
+    margin-bottom: 3rem;
+}
+
+.variant {
+    background: var(--cream-white);
+    padding: 0;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 25px var(--shadow);
+    border-left: 4px solid var(--primary-green);
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.variant-content {
+    display: flex;
+    align-items: center;
+    min-height: 200px;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.variant-image {
+    flex: 0 0 300px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 0 0 0 15px;
+    position: relative;
+}
+
+.variant-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+/* Posición específica para eventos sociales */
+.variant-image:has(img[alt*="Eventossociales"]) .variant-img,
+.variant-image:has(img[alt*="Eventos Sociales"]) .variant-img {
+    object-position: bottom;
+}
+
+/* Clase específica para posicionar imagen en la parte inferior */
+.img-bottom {
+    object-position: bottom !important;
+}
+
+.variant:hover .variant-img {
+    transform: scale(1.05);
+}
+
+.variant-details {
+    flex: 1;
+    padding: 2rem;
+}
+
+.variant h3 {
+    font-size: 1.4rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.variant-details p {
+    margin-bottom: 0.8rem;
+    color: var(--text-medium);
+    line-height: 1.6;
+}
+
+.ingredient-list {
+    list-style: none;
+    padding: 0;
+}
+
+.ingredient-list li {
+    margin-bottom: 0.5rem;
+    color: var(--text-medium);
+    line-height: 1.6;
+}
+
+.product-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.product-actions .btn-whatsapp,
+.product-actions .btn-secondary {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+}
+
+/* Responsive para páginas de productos */
+@media (max-width: 768px) {
+    .product-detail-content {
+        padding: 0 20px;
+    }
+    
+    .variant-content {
+        flex-direction: column;
+        min-height: auto;
+    }
+    
+    .variant-image {
+        flex: none;
+        width: 100%;
+        height: 200px;
+        border-radius: 15px 15px 0 0;
+    }
+    
+    .variant-details {
+        padding: 1.5rem;
+    }
+    
+    .product-detail-info h1 {
+        font-size: 2rem;
+    }
+    
+    .product-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .product-actions {
+        flex-direction: column;
+    }
+    
+    .product-actions .btn-whatsapp,
+    .product-actions .btn-secondary {
+        flex: none;
+        min-width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .variant-image {
+        height: 150px;
+    }
+    
+    .variant-details {
+        padding: 1rem;
+    }
+    
+    .variant h3 {
+        font-size: 1.2rem;
+    }
+    
+    .variant-details p {
+        font-size: 0.9rem;
+    }
+}
+
 /* Sección Destacados */
 .featured {
     padding: 100px 0;

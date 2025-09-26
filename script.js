@@ -44,8 +44,6 @@ form.addEventListener('submit', function(e) {
     const evento = formData.get('evento');
     const personas = formData.get('personas');
     const autorizacion = formData.get('autorizacion') ? 'Sí' : 'No';
-    const contacto = formData.get('contacto');
-    
     // Crear mensaje para WhatsApp
     const mensaje = `¡Hola! Deseo cotizar productos de Pistacherito.
 
@@ -58,7 +56,6 @@ form.addEventListener('submit', function(e) {
 • Tipo de evento: ${evento}
 • Cantidad de personas: ${personas}
 • Autorización telefónica: ${autorizacion}
-• Preferencia de contacto: ${contacto}
 
 ¡Gracias por contactarnos! 🌰`;
 

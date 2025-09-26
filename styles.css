@@ -12,6 +12,26 @@ body {
     background-color: #fefefe;
 }
 
+/* Aplicar texto justificado globalmente */
+p, .text-content, .description, .content-text {
+    text-align: justify;
+}
+
+/* Mantener centrado para elementos específicos que deben permanecer centrados */
+h1, h2, h3, h4, h5, h6, 
+.hero-text h1, 
+.hero-text .hero-tagline,
+.hero-tagline-block .hero-tagline,
+.quote-form h2,
+.quote-form p,
+.btn-primary, .btn-secondary, .btn-whatsapp,
+.value-item,
+.hero-image-overlay,
+.hero-image-overlay h3,
+.hero-image-overlay p {
+    text-align: center;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;

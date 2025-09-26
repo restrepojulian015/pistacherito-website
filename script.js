@@ -47,17 +47,17 @@ form.addEventListener('submit', function(e) {
     // Crear mensaje para WhatsApp
     const mensaje = `¡Hola! Deseo cotizar productos de Pistacherito.
 
-📋 *Información del cliente:*
+*Información del cliente:*
 • Nombre: ${nombre}
 • Teléfono: ${telefono}
 • Email: ${email}
 
-🎉 *Detalles del evento:*
+*Detalles del evento:*
 • Tipo de evento: ${evento}
 • Cantidad de personas: ${personas}
 • Autorización telefónica: ${autorizacion}
 
-¡Gracias por contactarnos! 🌰`;
+¡Gracias!`;
 
     // Codificar mensaje para URL
     const mensajeCodificado = encodeURIComponent(mensaje);
@@ -233,6 +233,15 @@ function validateField(e) {
     
     return true;
 }
+
+// Controlar el evento de whatsapp
+document.querySelector('.contact .btn-whatsapp')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    const numero = '573144707571';
+    const mensaje = '¡Hola! Quiero más información por favor.';
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, '_blank');
+  });
 
 function showFieldError(field, message) {
     const errorDiv = document.createElement('div');

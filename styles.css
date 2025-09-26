@@ -521,7 +521,7 @@ h1, h2, h3, h4, h5, h6,
 
 .variant-image {
     flex: 0 0 300px;
-    height: 200px;
+    height: 300px;
     overflow: hidden;
     border-radius: 0 0 0 15px;
     position: relative;
@@ -541,6 +541,7 @@ h1, h2, h3, h4, h5, h6,
 .variant-image:has(img[alt*="Eventos Sociales"]) .variant-img {
     object-position: bottom;
 }
+
 
 /* Clase específica para posicionar imagen en la parte inferior */
 .img-bottom {

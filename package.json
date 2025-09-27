@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "dev": "vercel dev",
-    "build": "echo 'No build step required for static site'",
+    "build": "mkdir -p public && cp -r *.html *.css *.js matrial_piscaheritos public/",
     "deploy": "vercel --prod"
   },
   "dependencies": {

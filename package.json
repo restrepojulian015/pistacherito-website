@@ -1,0 +1,29 @@
+{
+  "name": "pistacherito-website",
+  "version": "1.0.0",
+  "description": "Sitio web de Pistacherito - Regalos con Historia",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'No build step required for static site'",
+    "deploy": "vercel --prod"
+  },
+  "dependencies": {
+    "resend": "^3.2.0"
+  },
+  "devDependencies": {
+    "vercel": "^32.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "pistacherito",
+    "regalos",
+    "frutos-secos",
+    "eventos",
+    "corporativos"
+  ],
+  "author": "Pistacherito",
+  "license": "MIT"
+}

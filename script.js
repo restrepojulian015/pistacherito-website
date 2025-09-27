@@ -44,7 +44,35 @@ form.addEventListener('submit', function(e) {
     const evento = formData.get('evento');
     const personas = formData.get('personas');
     const autorizacion = formData.get('autorizacion') ? 'Sí' : 'No';
-    // Crear mensaje para WhatsApp
+
+    // 1) Enviar correo por backend (no bloquea WhatsApp)
+    fetch('/api/send-advisory', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            nombre,
+            telefono,
+            email,
+            evento,
+            personas,
+            autorizacion
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            console.log('Correo enviado exitosamente');
+        } else {
+            console.error('Error enviando correo:', data.error);
+        }
+    })
+    .catch(error => {
+        console.error('Error de conexión:', error);
+    });
+
+    // 2) Crear mensaje para WhatsApp
     const mensaje = `¡Hola! Deseo cotizar productos de Pistacherito.
 
 *Información del cliente:*

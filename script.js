@@ -168,7 +168,7 @@ Por favor, envíame más información sobre:
 • Opciones de personalización
 • Tiempos de entrega
 
-¡Gracias! 🌰`;
+¡Gracias!`;
 
         // Codificar mensaje para URL
         const mensajeCodificado = encodeURIComponent(mensaje);
@@ -266,7 +266,7 @@ function validateField(e) {
 document.querySelector('.contact .btn-whatsapp')?.addEventListener('click', (e) => {
     e.preventDefault();
     const numero = '573144707571';
-    const mensaje = '¡Hola! Quiero más información por favor.';
+    const mensaje = '¡Hola! Quiero más información sobre los regalos con historia, por favor.';
     const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
     window.open(url, '_blank');
   });

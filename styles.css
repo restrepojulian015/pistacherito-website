@@ -747,6 +747,8 @@ h1, h2, h3, h4, h5, h6,
     border: 1px solid rgba(74, 124, 89, 0.1);
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .product-card::before {
@@ -819,6 +821,13 @@ h1, h2, h3, h4, h5, h6,
     color: var(--text-medium);
     margin-bottom: 2rem;
     line-height: 1.6;
+    flex-grow: 1;
+}
+
+/* Contenedor de botones para alineación */
+.product-card .btn-secondary,
+.product-card .btn-whatsapp {
+    margin-top: auto;
 }
 
 /* Espaciado específico para botones en catálogo */
@@ -1090,6 +1099,20 @@ h1, h2, h3, h4, h5, h6,
     padding: 100px 0;
     background: var(--cream-white);
     position: relative;
+}
+
+/* Botones de contacto uniformes - Solo WhatsApp y Email */
+.contact-item .btn-whatsapp,
+.contact-item .btn-email {
+    width: 360px;
+    text-align: center;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px 20px;
 }
 
 .contact h2 {
@@ -1569,6 +1592,24 @@ h1, h2, h3, h4, h5, h6,
     }
 }
 
+/* Responsive para botones de contacto - Solo WhatsApp y Email */
+@media (max-width: 768px) {
+    .contact-item .btn-whatsapp,
+    .contact-item .btn-email {
+        width: 320px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-item .btn-whatsapp,
+    .contact-item .btn-email {
+        width: 220px;
+        font-size: 0.85rem;
+        padding: 12px 20px;
+    }
+}
+
 /* Móviles muy pequeños */
 @media (max-width: 360px) {
     .hero-text h1 {
@@ -1597,5 +1638,40 @@ h1, h2, h3, h4, h5, h6,
     .btn-whatsapp {
         padding: 10px 20px;
         font-size: 0.9rem;
+    }
+    
+    .contact-item .btn-whatsapp,
+    .contact-item .btn-email {
+        width: 180px;
+        font-size: 0.8rem;
+        padding: 10px 15px;
+    }
+}
+
+/* Específico para pantallas muy estrechas como Galaxy Z Fold 5 */
+@media (max-width: 344px) {
+    .contact-item .btn-whatsapp,
+    .contact-item .btn-email {
+        width: 160px;
+        font-size: 0.75rem;
+        padding: 12px 10px;
+        gap: 6px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        white-space: normal;
+    }
+    
+    .contact-item .btn-whatsapp i,
+    .contact-item .btn-email i {
+        font-size: 1.2rem;
+        margin-bottom: 4px;
+    }
+    
+    /* Texto del email más pequeño */
+    .contact-item:nth-child(2) p {
+        font-size: 0.8rem;
     }
 }

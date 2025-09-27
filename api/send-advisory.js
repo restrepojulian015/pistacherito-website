@@ -75,7 +75,12 @@ Esta solicitud fue enviada desde el formulario de asesoría gratuita de Pistache
     });
 
     console.log('Email enviado exitosamente:', emailResponse);
-    res.status(200).json({ success: true, message: 'Email enviado correctamente' });
+    console.log('Detalles del envío:', {
+      from: 'Pistacherito <onboarding@resend.dev>',
+      to: ['ja0433rc.ut@cendi.edu.co', 'pistacheritofs@gmail.com'],
+      subject: 'Nueva solicitud de asesoría - Pistacherito'
+    });
+    res.status(200).json({ success: true, message: 'Email enviado correctamente', details: emailResponse });
 
   } catch (error) {
     console.error('Error enviando email:', error);

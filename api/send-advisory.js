@@ -32,7 +32,7 @@ module.exports = async (req, res) => {
     // Enviar correo
     const emailResponse = await resend.emails.send({
       from: 'Pistacherito <onboarding@resend.dev>',
-      to: ['ja0433rc.ut@cendi.edu.co', 'pistacheritofs@gmail.com', 'restrepojulian015@gmail.com'],
+      to: ['pistacheritofs@gmail.com'],
       subject: 'Nueva solicitud de asesoría - Pistacherito',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">

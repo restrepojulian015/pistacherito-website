@@ -68,7 +68,8 @@ Información del cliente:
 Detalles del evento:
 - Tipo de evento: ${evento}
 - Cantidad de personas: ${personas}
-- Autorización de Tratamiento de Datos: ${autorizacion}
+- Autorización telefónica: ${autorizacion}
+- Autorización de Tratamientos de Datos: ${autorizacion}
 
 Esta solicitud fue enviada desde el formulario de asesoría gratuita de Pistacherito.
       `

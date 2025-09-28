@@ -31,7 +31,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Formulario de cotización
 const form = document.querySelector('.form');
-const whatsappNumber = '573144707571';
 
 form.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -45,7 +44,10 @@ form.addEventListener('submit', function(e) {
     const personas = formData.get('personas');
     const autorizacion = formData.get('autorizacion') ? 'Sí' : 'No';
 
-    // 1) Enviar correo por backend (no bloquea WhatsApp)
+    // Mostrar mensaje de carga
+    showNotification('Enviando solicitud de asesoría...', 'info');
+
+    // Enviar correo por backend
     fetch('/api/send-advisory', {
         method: 'POST',
         headers: {
@@ -64,63 +66,50 @@ form.addEventListener('submit', function(e) {
     .then(data => {
         if (data.success) {
             console.log('Correo enviado exitosamente');
+            showNotification('¡Solicitud enviada exitosamente! Te contactaremos pronto por email.', 'success');
+            
+            // Limpiar formulario solo si el envío fue exitoso
+            form.reset();
         } else {
             console.error('Error enviando correo:', data.error);
+            showNotification('Error al enviar la solicitud. Por favor intenta nuevamente.', 'error');
         }
     })
     .catch(error => {
         console.error('Error de conexión:', error);
+        showNotification('Error de conexión. Verifica tu internet e intenta nuevamente.', 'error');
     });
-
-    // 2) Crear mensaje para WhatsApp
-    const mensaje = `¡Hola! Deseo cotizar productos de Pistacherito.
-
-*Información del cliente:*
-• Nombre: ${nombre}
-• Teléfono: ${telefono}
-• Email: ${email}
-
-*Detalles del evento:*
-• Tipo de evento: ${evento}
-• Cantidad de personas: ${personas}
-• Autorización telefónica: ${autorizacion}
-
-¡Gracias!`;
-
-    // Codificar mensaje para URL
-    const mensajeCodificado = encodeURIComponent(mensaje);
-    
-    // Crear enlace de WhatsApp
-    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${mensajeCodificado}`;
-    
-    // Abrir WhatsApp
-    window.open(whatsappURL, '_blank');
-    
-    // Mostrar mensaje de confirmación
-    showNotification('¡Mensaje preparado! Se abrirá WhatsApp en una nueva ventana.', 'success');
-    
-    // Limpiar formulario
-    form.reset();
 });
 
 // Función para mostrar notificaciones
 function showNotification(message, type = 'info') {
+    // Definir colores e íconos según el tipo
+    let backgroundColor = '#2196F3'; // default info
+    let icon = 'info-circle';
+    
+    if (type === 'success') {
+        backgroundColor = '#4CAF50';
+        icon = 'check-circle';
+    } else if (type === 'error') {
+        backgroundColor = '#f44336';
+        icon = 'exclamation-circle';
+    }
+    
     // Crear elemento de notificación
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
     notification.innerHTML = `
         <div class="notification-content">
-            <i class="fas fa-${type === 'success' ? 'check-circle' : 'info-circle'}"></i>
+            <i class="fas fa-${icon}"></i>
             <span>${message}</span>
         </div>
     `;
     
-    // Estilos para la notificación
     notification.style.cssText = `
         position: fixed;
         top: 100px;
         right: 20px;
-        background: ${type === 'success' ? '#4CAF50' : '#2196F3'};
+        background: ${backgroundColor};
         color: white;
         padding: 1rem 1.5rem;
         border-radius: 10px;
@@ -129,6 +118,7 @@ function showNotification(message, type = 'info') {
         transform: translateX(400px);
         transition: transform 0.3s ease;
         max-width: 350px;
+        font-family: 'Poppins', sans-serif;
     `;
     
     // Agregar al DOM

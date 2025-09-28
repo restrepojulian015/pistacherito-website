@@ -1264,7 +1264,8 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .footer-bottom {
-    text-align: center;
+    text-align: justify;
+    text-align-last: center;
     padding-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     color: var(--cream-white);

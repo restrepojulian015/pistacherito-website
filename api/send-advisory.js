@@ -49,7 +49,7 @@ module.exports = async (req, res) => {
             <h3 style="color: #2d5016; margin-top: 0;">Detalles del evento:</h3>
             <p><strong>Tipo de evento:</strong> ${evento}</p>
             <p><strong>Cantidad de personas:</strong> ${personas}</p>
-            <p><strong>Autorización telefónica:</strong> ${autorizacion}</p>
+            <p><strong>Autorización de Tratamiento de Datos:</strong> ${autorizacion}</p>
           </div>
           
           <p style="color: #6b8e6b; font-style: italic;">
@@ -68,8 +68,7 @@ Información del cliente:
 Detalles del evento:
 - Tipo de evento: ${evento}
 - Cantidad de personas: ${personas}
-- Autorización telefónica: ${autorizacion}
-- Autorización de Tratamientos de Datos: ${autorizacion}
+- Autorización de Tratamiento de Datos: ${autorizacion}
 
 Esta solicitud fue enviada desde el formulario de asesoría gratuita de Pistacherito.
       `

@@ -141,16 +141,17 @@ function showNotification(message, type = 'info') {
 }
 
 // Botones de cotización en productos
-document.querySelectorAll('.btn-whatsapp').forEach(button => {
-    button.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        // Obtener información del producto
-        const productCard = this.closest('.product-card');
-        const productName = productCard.querySelector('h3').textContent;
-        
-        // Crear mensaje para WhatsApp
-        const mensaje = `¡Hola! Deseo cotizar el producto: *${productName}*
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.btn-whatsapp').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Obtener información del producto
+            const productCard = this.closest('.product-card');
+            const productName = productCard.querySelector('h3').textContent;
+            
+            // Crear mensaje para WhatsApp
+            const mensaje = `¡Hola! Deseo cotizar el producto: *${productName}*
 
 Por favor, envíame más información sobre:
 • Precios
@@ -160,17 +161,18 @@ Por favor, envíame más información sobre:
 
 ¡Gracias!`;
 
-        // Codificar mensaje para URL
-        const mensajeCodificado = encodeURIComponent(mensaje);
-        
-        // Crear enlace de WhatsApp
-        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${mensajeCodificado}`;
-        
-        // Abrir WhatsApp
-        window.open(whatsappURL, '_blank');
-        
-        // Mostrar notificación
-        showNotification(`¡Mensaje preparado para ${productName}!`, 'success');
+            // Codificar mensaje para URL
+            const mensajeCodificado = encodeURIComponent(mensaje);
+            
+            // Crear enlace de WhatsApp
+            const whatsappURL = `https://wa.me/573144707571?text=${mensajeCodificado}`;
+            
+            // Abrir WhatsApp
+            window.open(whatsappURL, '_blank');
+            
+            // Mostrar notificación
+            showNotification(`¡Mensaje preparado para ${productName}!`, 'success');
+        });
     });
 });
 

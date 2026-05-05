@@ -536,6 +536,15 @@ h1, h2, h3, h4, h5, h6,
     display: block;
 }
 
+video.variant-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
 /* Posición específica para eventos sociales */
 .variant-image:has(img[alt*="Eventossociales"]) .variant-img,
 .variant-image:has(img[alt*="Eventos Sociales"]) .variant-img {
@@ -611,6 +620,7 @@ h1, h2, h3, h4, h5, h6,
         aspect-ratio: 3/4;
         border-radius: 15px 15px 0 0;
     }
+
     
     .variant-details {
         padding: 1.5rem;

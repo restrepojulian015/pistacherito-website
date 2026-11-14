@@ -165,7 +165,7 @@ Por favor, envíame más información sobre:
             const mensajeCodificado = encodeURIComponent(mensaje);
             
             // Crear enlace de WhatsApp
-            const whatsappURL = `https://wa.me/573144707571?text=${mensajeCodificado}`;
+            const whatsappURL = `https://wa.me/573132035072?text=${mensajeCodificado}`;
             
             // Abrir WhatsApp
             window.open(whatsappURL, '_blank');
@@ -257,7 +257,7 @@ function validateField(e) {
 // Controlar el evento de whatsapp
 document.querySelector('.contact .btn-whatsapp')?.addEventListener('click', (e) => {
     e.preventDefault();
-    const numero = '573144707571';
+    const numero = '573132035072';
     const mensaje = '¡Hola! Quiero más información sobre los regalos con historia, por favor.';
     const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
     window.open(url, '_blank');

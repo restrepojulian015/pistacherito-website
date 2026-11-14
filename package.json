@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "dev": "vercel dev",
-    "build": "mkdir -p public && cp -r *.html *.css *.js matrial_piscaheritos public/",
+    "build": "mkdir -p public && cp -r *.html *.css *.js matrial_piscaheritos 'favicon (1)' public/",
     "deploy": "vercel --prod"
   },
   "dependencies": {

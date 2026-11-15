@@ -5,7 +5,7 @@ Este README compila la intención, la estructura y el contenido base extraído d
 ## ✨ Propuesta del sitio
 
 - **Sin carrito de compras**: en lugar de precio, se solicita cotización personalizada.
-- **Contacto por WhatsApp**: **3144707571** (mensaje sugerido: *"Deseo cotizar XXXXX producto"*).
+- **Contacto por WhatsApp**: **3132035072** (mensaje sugerido: *"Deseo cotizar XXXXX producto"*).
 - **Ediciones limitadas**: productos especiales, "como tú".
 - **Asesoría gratuita**: integra el sabor de las nueces y su simbolismo con tu evento.
 
@@ -34,7 +34,7 @@ El catálogo deberá exhibir **Kir – Alimenta tu arte** con una presentación 
 
 ## 📄 Texto extraído del documento
 
-- En lugar de precio solicitar cotización link a whatapp 3144707571: llegue mensaje deseo cotizar xxxxx producto. No tiene carrito,
+- En lugar de precio solicitar cotización link a whatapp 3132035072: llegue mensaje deseo cotizar xxxxx producto. No tiene carrito,
 - Eidiciones limitadas especiales como tu,
 - Acá se puede colocar recibe asesoría gratuita para que integres el sabor de las nueces y su simbolismo con tu evento. Formulario de cotización.
 - Nombre de contacto:
@@ -159,4 +159,4 @@ recuerdos memorables.
 
 ## 📞 Contacto
 
-- WhatsApp: **3144707571**
+- WhatsApp: **3132035072**

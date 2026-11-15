@@ -140,25 +140,13 @@ a {
     padding-inline: var(--gutter);
 }
 
-/* Section headers: centered with a gold accent rule */
+/* Section headers: centered */
 .featured h2,
 .catalog h2,
 .quote-form h2 {
     font-size: var(--fs-h2);
     text-align: center;
     margin-bottom: var(--space-4);
-}
-
-.featured h2::after,
-.catalog h2::after,
-.quote-form h2::after {
-    content: '';
-    display: block;
-    width: 56px;
-    height: 3px;
-    margin: var(--space-4) auto 0;
-    border-radius: var(--radius-pill);
-    background: var(--gold-500);
 }
 
 /* ---------- Header & navigation ---------- */
